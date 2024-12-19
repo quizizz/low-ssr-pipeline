@@ -1,0 +1,6 @@
+*.ipynb
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
