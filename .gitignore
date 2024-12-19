@@ -4,3 +4,6 @@
 *.pyd
 *.pyw
 *.pyz
+*.csv
+*.xlsx
+*.xls

@@ -168,6 +168,9 @@ print(response.text)
 
 def add_questions(quiz_id, draft_id, questions):
     for question in questions:
-        payload = json.dumps({**question, "quizId": quiz_id})
+        question_data = question.copy()
+        if 'teleportFrom' in question_data:
+            del question_data['teleportFrom']
+        payload = json.dumps({**question_data, "quizId": quiz_id})
         response = requests.request("POST", getUrl(draft_id), headers=headers, data=payload)
         print(response.text)
