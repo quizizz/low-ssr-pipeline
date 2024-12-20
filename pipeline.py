@@ -3,8 +3,7 @@ from get_questions_v2 import get_questions
 from add_questions import add_questions
 import pandas as pd
 from publish import publish_quiz
-
-query = "solving right triangle"
+from relevance import get_relevance
 
 # create quiz
 # insert the query as subtopic and fetch questions
@@ -26,6 +25,9 @@ for idx, row in df.iterrows():
     questions = get_questions(subtopic = query, topic = topic, language = "English", subject = "Mathematics")
 
     add_questions(create_quiz_data['quiz_id'], create_quiz_data['draft_id'], questions['data']['questions'])
+
+    relevance = get_relevance(questions['data']['questions'], query)
+    print(relevance)
 
     publish_quiz(create_quiz_data['quiz_id'], create_quiz_data['draft_id'])
 
