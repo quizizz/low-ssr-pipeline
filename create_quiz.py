@@ -3,7 +3,7 @@ import json
 from headers import get_headers
 url = "https://quizizz.com/_quizserver/main/v2/quiz"
 
-def creat_quiz(title = "Untitled", grade = ["4"] , subject = ["Mathematics"]):
+def create_quiz(title = "Untitled", grade = ["4"] , subject = ["Mathematics"]):
     payload = json.dumps({
         "name": title,
         "subjects": subject,

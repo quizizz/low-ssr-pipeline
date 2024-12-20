@@ -139,9 +139,6 @@ payload = json.dumps({
   }
 })
 
-response = requests.request("POST", url, headers=headers, data=payload)
-
-print(response.text)
 
 def add_questions(quiz_id, draft_id, questions):
     for question in questions:
